@@ -1,16 +1,186 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>ns repository</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ns-package repository</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .info-box h2 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .info-box pre {
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead {
+            background: #f0f0f0;
+            border-bottom: 2px solid #000;
+        }
+
+        th {
+            text-align: left;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        a {
+            color: #0000EE;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: #551A8B;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 20px;
+            margin-right: 5px;
+        }
+
+        .size {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .date {
+            color: #666;
+            white-space: nowrap;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Debian Package Repository</h1>
-    <p>Add this repository to your sources:</p>
-    <pre>echo "deb [arch=arm64] https://YOUR_USERNAME.github.io/YOUR_REPO bullseye main" | sudo tee /etc/apt/sources.list.d/my-repo.list</pre>
-    <p>Then run:</p>
-    <pre>sudo apt update</pre>
+    <div class="container">
+        <h1>📦 APT Repository</h1>
+
+        <div class="info-box">
+            <h2>🔧 Setup Instructions</h2>
+            <p>Add this repository to your Debian/Ubuntu system:</p>
+            <pre>echo "deb [arch=arm64] https://YOUR_USERNAME.github.io/YOUR_REPO bullseye main" | sudo tee /etc/apt/sources.list.d/custom.list
+sudo apt update</pre>
+
+            <p>If you get GPG key errors, you can skip signature verification (not recommended for production):</p>
+            <pre>echo "deb [arch=arm64 trusted=yes] https://YOUR_USERNAME.github.io/YOUR_REPO bullseye main" | sudo tee /etc/apt/sources.list.d/custom.list</pre>
+        </div>
+
+        <h2>📁 Repository Structure</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th class="size">Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="icon">📁</span><a href="dists/">dists/</a></td>
+                    <td>Distribution metadata and package indexes</td>
+                    <td class="size">Directory</td>
+                </tr>
+                <tr>
+                    <td><span class="icon">📁</span><a href="pool/">pool/</a></td>
+                    <td>Actual .deb package files</td>
+                    <td class="size">Directory</td>
+                </tr>
+                <tr>
+                    <td><span class="icon">📄</span><a href="dists/bullseye/main/binary-arm64/Packages">Packages</a>
+                    </td>
+                    <td>Package index (plaintext)</td>
+                    <td class="size">File</td>
+                </tr>
+                <tr>
+                    <td><span class="icon">📄</span><a
+                            href="dists/bullseye/main/binary-arm64/Packages.gz">Packages.gz</a></td>
+                    <td>Package index (compressed)</td>
+                    <td class="size">File</td>
+                </tr>
+                <tr>
+                    <td><span class="icon">📄</span><a href="dists/bullseye/Release">Release</a></td>
+                    <td>Distribution release metadata</td>
+                    <td class="size">File</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-box" style="margin-top: 30px;">
+            <h2>ℹ️ Repository Information</h2>
+            <p><strong>Architecture:</strong> arm64</p>
+            <p><strong>Distribution:</strong> bullseye</p>
+            <p><strong>Component:</strong> main</p>
+            <p style="margin-top: 10px; color: #666; font-size: 0.9em;">
+                This is a Debian package repository hosted on GitHub Pages.
+                Browse the directories above to view available packages.
+            </p>
+        </div>
+    </div>
 </body>
 
 </html>

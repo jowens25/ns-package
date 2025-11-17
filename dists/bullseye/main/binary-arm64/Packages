@@ -43,3 +43,18 @@ SHA256: 41a503f686a8184131e693e9ad7eaccec02f5ec85e6c5d493f5672ef9399c955
 SHA512: 60f3d89f56b372652de670c693429d360bc45c2148c66c0055d664e65e23cb54d4f65c83eaf5e3eac7237a1564ab5aaa4492309fd24a341a0baf768a7f6b9a9b
 Description: Novus server configuration tool
 
+Package: ns
+Architecture: arm64
+Version: 1.5.126
+Priority: optional
+Section: web
+Maintainer: Jacob Owens <jowens@novuspower.com>
+Pre-Depends: systemd, network-manager, snmp, snmpd, nginx, pure-ftpd, xinetd, openssl
+Filename: pool/main/n/ns/ns_1.5.126_arm64.deb
+Size: 13022424
+MD5sum: 297f0f115abf811a1deac8828f84f651
+SHA1: ff9b969769ee53ff7a1fdd578489627040b91c75
+SHA256: d1d3d021dc63dfca5f21521fa09694b6b1b76e99d63be993ecdbb1be05d849a2
+SHA512: b06564caa84631f2913108edf93eb456ff5faf171cbc7c136faa2b56085b84e8e994f199092faed8a37706b53ff59bbfdf02e2c389ddc7d955be5c59fd3e036d
+Description: Novus server configuration tool
+
